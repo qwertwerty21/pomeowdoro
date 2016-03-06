@@ -86,7 +86,7 @@
 		if( bringOnCats ){
 			
 			bringOnCats = false;
-			catIframeYT.stopVideo();
+			catIframeYT.pauseVideo();
 			$( "#catShowerDiv" ).addClass( "hidden" );
 			$( "#timerShowerDiv" ).removeClass( "invisible" );
 			$countDownTimeDis.removeClass( "fix-to-bot" );
