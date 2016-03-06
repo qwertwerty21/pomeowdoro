@@ -224,7 +224,6 @@ footer {
 }
 
 //ADD MEDIA QUERIES SO THERES NO SCORLLING
-//CHANGE TIMER OBJECT TO ITS OWN FILE 
 
 /* ==========================================================================
    Helper classes
@@ -312,8 +311,25 @@ footer {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 700px) {
   /* Style adjustments for viewports that meet the condition */
+  body{
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  /* Style adjustments for viewports that meet the condition */
+  body{
+    font-size: 35%;
+  }
+
+  .add-minus-time-btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {

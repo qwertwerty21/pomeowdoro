@@ -704,7 +704,7 @@ footer h4 {
 /*
  * Hide visually and from screen readers:
  */
-/* line 237, ../sass/styles.scss */
+/* line 236, ../sass/styles.scss */
 .hidden {
   display: none !important;
 }
@@ -713,7 +713,7 @@ footer h4 {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 246, ../sass/styles.scss */
+/* line 245, ../sass/styles.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -724,7 +724,7 @@ footer h4 {
   position: absolute;
   width: 1px;
 }
-/* line 256, ../sass/styles.scss */
+/* line 255, ../sass/styles.scss */
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
   clip: auto;
   height: auto;
@@ -742,7 +742,7 @@ footer h4 {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-/* line 277, ../sass/styles.scss */
+/* line 276, ../sass/styles.scss */
 .invisible {
   visibility: hidden;
 }
@@ -758,14 +758,14 @@ footer h4 {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 294, ../sass/styles.scss */
+/* line 293, ../sass/styles.scss */
 .clearfix:before {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-/* line 300, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .clearfix:after {
   content: " ";
   /* 1 */
@@ -779,8 +779,26 @@ footer h4 {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 700px) {
   /* Style adjustments for viewports that meet the condition */
+  /* line 316, ../sass/styles.scss */
+  body {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  /* Style adjustments for viewports that meet the condition */
+  /* line 323, ../sass/styles.scss */
+  body {
+    font-size: 35%;
+  }
+
+  /* line 327, ../sass/styles.scss */
+  .add-minus-time-btn, .start-pause-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
@@ -791,7 +809,7 @@ footer h4 {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 @media print {
-  /* line 330, ../sass/styles.scss */
+  /* line 346, ../sass/styles.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -800,7 +818,7 @@ footer h4 {
     box-shadow: none !important;
     text-shadow: none !important;
   }
-  /* line 337, ../sass/styles.scss */
+  /* line 353, ../sass/styles.scss */
   *:before, *:after {
     background: transparent !important;
     color: #000 !important;
@@ -810,20 +828,20 @@ footer h4 {
     text-shadow: none !important;
   }
 
-  /* line 346, ../sass/styles.scss */
+  /* line 362, ../sass/styles.scss */
   a {
     text-decoration: underline;
   }
-  /* line 348, ../sass/styles.scss */
+  /* line 364, ../sass/styles.scss */
   a:visited {
     text-decoration: underline;
   }
-  /* line 351, ../sass/styles.scss */
+  /* line 367, ../sass/styles.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 355, ../sass/styles.scss */
+  /* line 371, ../sass/styles.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -832,12 +850,12 @@ footer h4 {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 363, ../sass/styles.scss */
+  /* line 379, ../sass/styles.scss */
   a[href^="#"]:after, a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 367, ../sass/styles.scss */
+  /* line 383, ../sass/styles.scss */
   pre, blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
@@ -847,29 +865,29 @@ footer h4 {
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  /* line 375, ../sass/styles.scss */
+  /* line 391, ../sass/styles.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 378, ../sass/styles.scss */
+  /* line 394, ../sass/styles.scss */
   tr {
     page-break-inside: avoid;
   }
 
-  /* line 381, ../sass/styles.scss */
+  /* line 397, ../sass/styles.scss */
   img {
     page-break-inside: avoid;
     max-width: 100% !important;
   }
 
-  /* line 385, ../sass/styles.scss */
+  /* line 401, ../sass/styles.scss */
   p, h2, h3 {
     orphans: 3;
     widows: 3;
   }
 
-  /* line 389, ../sass/styles.scss */
+  /* line 405, ../sass/styles.scss */
   h2, h3 {
     page-break-after: avoid;
   }
