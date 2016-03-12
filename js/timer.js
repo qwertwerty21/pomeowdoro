@@ -86,33 +86,47 @@
 		if( bringOnCats ){
 			
 			bringOnCats = false;
-			catIframeYT.pauseVideo();
+			
+			if( catIframeYT ){
+				catIframeYT.pauseVideo();
+			}
+			
 			$( "#catShowerDiv" ).addClass( "hidden" );
 			$( "#timerShowerDiv" ).removeClass( "invisible" );
 			$countDownTimeDis.removeClass( "fix-to-bot" );
 			timeInMilSec = this.timeInMilSecW;
-			
-			var workNotification = new Notification( "Pomeowdoro", {
+
+			if( typeof Notification === 'function' ){
+				var workNotification = new Notification( "Pomeowdoro", {
 					body: "No more kitties for now! It's time for work!",
 					icon: "img/catbg.JPG"
 				});
+			}
+			
 		}
 
 		else{
 			
 			bringOnCats = true;
 			$( "#catShowerDiv" ).removeClass( "hidden" );
-			catIframeYT.playVideo();
+			
+			if( catIframeYT ){
+				catIframeYT.playVideo();
+			}
+			
 			$( "#timerShowerDiv" ).addClass( "invisible" );
 			$countDownTimeDis.addClass( "fix-to-bot" );
 			timeInMilSec = this.timeInMilSecP;
 			pomeowdorosFinished++;
 			$( "#pomFinCountDis" ).html( pomeowdorosFinished );
-			
-			var breakNotification = new Notification( "Pomeowdoro", {
+
+			if( typeof Notification === 'function' ){
+				var breakNotification = new Notification( "Pomeowdoro", {
 					body: "Woooooo!! It's breaktime!",
 					icon: "img/catbg.JPG"
-				});
+				});		
+			}
+			
 		}
 	
 
