@@ -94,7 +94,7 @@
 			
 			var workNotification = new Notification( "Pomeowdoro", {
 					body: "No more kitties for now! It's time for work!",
-					icon: "../img/catbg.JPG"
+					icon: "img/catbg.JPG"
 				});
 		}
 
@@ -111,7 +111,7 @@
 			
 			var breakNotification = new Notification( "Pomeowdoro", {
 					body: "Woooooo!! It's breaktime!",
-					icon: "../img/catbg.JPG"
+					icon: "img/catbg.JPG"
 				});
 		}
 	
