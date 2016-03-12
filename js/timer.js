@@ -84,6 +84,12 @@
 		clearInterval(this.tickTock);
 		//reset clock and display kitties
 		if( bringOnCats ){
+
+			var workNote = function(){
+				var wNote = new Notification( "Pomeowdoro", {
+					body: "No more kitties for you, slacker! Get back to work!"
+				});
+			};
 			
 			bringOnCats = false;
 			catIframeYT.pauseVideo();
@@ -91,9 +97,16 @@
 			$( "#timerShowerDiv" ).removeClass( "invisible" );
 			$countDownTimeDis.removeClass( "fix-to-bot" );
 			timeInMilSec = this.timeInMilSecW;
+			workNote();
 		}
 
 		else{
+
+			var breakNote = function(){
+				var bNote = new Notification( "Pomeowdoro", {
+					body: "Woooooo!! It's breaktime!"
+				});
+			};
 			
 			bringOnCats = true;
 			$( "#catShowerDiv" ).removeClass( "hidden" );
@@ -103,6 +116,7 @@
 			timeInMilSec = this.timeInMilSecP;
 			pomeowdorosFinished++;
 			$( "#pomFinCountDis" ).html( pomeowdorosFinished );
+			breakNote();
 		}
 	
 
@@ -238,6 +252,10 @@
 		this.onPauseBtn();
 		this.onPlusMinusDuration();
 		this.updateDuration();
+
+		if (Notification.permission !== "granted"){
+    	Notification.requestPermission();
+		}
 	};
 
 	global.Timer = Timer;
