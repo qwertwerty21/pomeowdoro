@@ -96,12 +96,7 @@
 			$countDownTimeDis.removeClass( "fix-to-bot" );
 			timeInMilSec = this.timeInMilSecW;
 
-			if( typeof Notification === 'function' ){
-				var workNotification = new Notification( "Pomeowdoro", {
-					body: "No more kitties for now! It's time for work!",
-					icon: "img/catbg.JPG"
-				});
-			}
+			this.showNotification();
 			
 		}
 
@@ -120,12 +115,7 @@
 			pomeowdorosFinished++;
 			$( "#pomFinCountDis" ).html( pomeowdorosFinished );
 
-			if( typeof Notification === 'function' ){
-				var breakNotification = new Notification( "Pomeowdoro", {
-					body: "Woooooo!! It's breaktime!",
-					icon: "img/catbg.JPG"
-				});		
-			}
+			this.showNotification();
 			
 		}
 	
@@ -135,6 +125,48 @@
 		}
 		//start new interval
 		this.countItDown();
+	};
+
+	Timer.prototype.showNotification = function(){
+		if( typeof Notification === 'function' ){
+			
+			if( !bringOnCats ){
+				var workNotification = new Notification( "Pomeowdoro", {
+					body: "No more kitties for now! It's work time!",
+					icon: "img/catbg.JPG"
+				});
+
+				workNotification.onclick = function(){
+					window.focus();
+				};
+			}
+
+			else if( bringOnCats ){
+				if( pomeowdorosFinished > 0 && pomeowdorosFinished % 4 === 0 ){
+					var longBreakNotification = new Notification( "Pomeowdoro", {
+						body: "You've completed " + pomeowdorosFinished + " Pomeowdoro(s)! Time for a looooonngg break!",
+						icon: "img/catbg.JPG"
+					});
+
+					longBreakNotification.onclick = function(){
+						window.focus();
+					};
+				}
+
+				else{
+					var breakNotification = new Notification( "Pomeowdoro", {
+						body: "You've completed " + pomeowdorosFinished + " Pomeowdoro(s)! Nice! Time for a quick break!",
+						icon: "img/catbg.JPG"
+					});	
+
+					breakNotification.onclick = function(){
+						window.focus();
+					};
+				}
+				
+			}
+		}
+
 	};
 
 	Timer.prototype.onPauseBtn = function(){
