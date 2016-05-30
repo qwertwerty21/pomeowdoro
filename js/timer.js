@@ -32,11 +32,11 @@
 
 		if( !paused ){
 			
-			startTime = Number( new Date );
+			startTime = Number( new Date() );
 
 			this.tickTock = setInterval( function(){
 
-				var nowTime = Number( new Date );
+				var nowTime = Number( new Date() );
 				//calculate then difference between then and now and subtract the DIFFERENCE from time to get a more accurate timer
 				differenceTime = Math.floor( nowTime - startTime );
 				time = timeInMilSec - differenceTime;
