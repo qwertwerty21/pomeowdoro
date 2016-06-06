@@ -92,6 +92,7 @@
 			}
 			
 			$( "#catShowerDiv" ).addClass( "hidden" );
+			$( ".jumbotron" ).removeClass( "invisible" );
 			$( "#timerShowerDiv" ).removeClass( "invisible" );
 			$countDownTimeDis.removeClass( "fix-to-bot" );
 			timeInMilSec = this.timeInMilSecW;
@@ -109,6 +110,7 @@
 				catIframeYT.playVideo();
 			}
 			
+			$( ".jumbotron" ).addClass( "invisible" );
 			$( "#timerShowerDiv" ).addClass( "invisible" );
 			$countDownTimeDis.addClass( "fix-to-bot" );
 			timeInMilSec = this.timeInMilSecP;
