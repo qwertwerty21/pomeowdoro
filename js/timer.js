@@ -70,6 +70,11 @@
 		//get the remaining seconds which don't make up a minute and convert to secs--1000 ms in 1 sec
 		var seconds = Math.floor( ( time % 60000 ) / 1000 );
 
+		if( minutes < 0 && seconds < 0 ){
+			minutes = 0;
+			seconds = 0;
+		}
+
 		return [ minutes, seconds ];
 	};
 
