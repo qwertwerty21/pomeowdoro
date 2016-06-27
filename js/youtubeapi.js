@@ -20,7 +20,7 @@ window.onYouTubeIframeAPIReady = function(){
 	
 	});
 	
-}
+};
 
 function onPlayerReady( event ){
 	catIframeYT = event.target;
