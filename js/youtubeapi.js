@@ -25,4 +25,9 @@ window.onYouTubeIframeAPIReady = function(){
 function onPlayerReady( event ){
 	catIframeYT = event.target;
 	catIframeYT.pauseVideo();
+	setTimeout( setShuffleFunction, 1000 );
+}
+
+function setShuffleFunction(){
+	catIframeYT.setShuffle( true );
 }
